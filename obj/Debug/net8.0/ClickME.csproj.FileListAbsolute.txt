@@ -133,3 +133,4 @@ C:\Users\ASUS\source\repos\ClickME\ClickME\obj\Debug\net8.0\refint\ClickME.dll
 C:\Users\ASUS\source\repos\ClickME\ClickME\obj\Debug\net8.0\ClickME.pdb
 C:\Users\ASUS\source\repos\ClickME\ClickME\obj\Debug\net8.0\ClickME.genruntimeconfig.cache
 C:\Users\ASUS\source\repos\ClickME\ClickME\obj\Debug\net8.0\ref\ClickME.dll
+C:\Users\ASUS\source\repos\ClickME\ClickME\obj\Debug\net8.0\ClickME.sourcelink.json

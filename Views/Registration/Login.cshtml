@@ -1,0 +1,13 @@
+﻿@using ClickME.Models
+@model Login
+
+<h1 class="text-center">Войти</h1>
+
+<form asp-action="Login" asp-controller="Registration" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <label class="form-label" asp-for="Name"></label>
+    <input class="form-control" type="type" asp-for="Name" />
+    <label class="form-label" asp-for="Password"></label>
+    <input class="form-control" type="password" asp-for="Password" />
+    <button class="btn btn-primary">Войти</button>
+</form>
