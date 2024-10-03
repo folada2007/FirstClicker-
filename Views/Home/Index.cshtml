@@ -1,2 +1,42 @@
-﻿<a asp-action="Index" asp-controller="Registration">Зарегистрироваться/</a>
-<a asp-action="Login" asp-controller="Registration">Войти</a>
+﻿
+<div class="container-fluid d-flex justify-content-center">
+    <a id="changeImageBtn"><img id="myImage" class="kulagin" src="~/img/Kulagin.png" alt="Alternate Text" /></a>
+</div>
+<p class="text-center">Количество кликов: <span id="clickCount">0</span></p>
+<script>
+    let isLoadingImage = false;
+
+    document.getElementById("changeImageBtn").addEventListener("click", function () {
+        if (isLoadingImage) return;
+
+        isLoadingImage = true;
+
+        fetch('/Home/ClickChecker', {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.clickCount !== undefined) {
+                document.getElementById("clickCount").textContent = data.clickCount;
+            } else {
+                console.error('Ошибка при обновлении кликов:', data.error);
+            }
+            return fetch('/Home/GetNewImage');
+        })
+        .then(response => response.json())
+        .then(newImageUrl => {
+            const imgElement = document.getElementById("myImage");
+            const originalImageUrl = imgElement.src;
+            imgElement.src = newImageUrl;
+
+            setTimeout(() => {
+                imgElement.src = originalImageUrl;
+                isLoadingImage = false;
+            }, 100);
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            isLoadingImage = false;
+        });
+    });
+</script>

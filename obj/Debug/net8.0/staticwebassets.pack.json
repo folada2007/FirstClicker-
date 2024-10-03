@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\ASUS\\source\\repos\\ClickME\\ClickME\\wwwroot\\img\\kulagin.png",
+      "PackagePath": "staticwebassets\\img\\kulagin.png"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\source\\repos\\ClickME\\ClickME\\wwwroot\\img\\kulagin2frame.png",
+      "PackagePath": "staticwebassets\\img\\kulagin2frame.png"
+    },
+    {
       "Id": "C:\\Users\\ASUS\\source\\repos\\ClickME\\ClickME\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

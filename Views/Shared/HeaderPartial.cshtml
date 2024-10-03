@@ -1,5 +1,9 @@
-﻿<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
+﻿<nav class="navbar bg-body-tertiary nav-border-line">
+    <div class="container-fluid d-flex">
         <a asp-controller="Home" asp-action="Index">Piska</a>
+        <div>
+            <a asp-action="Index" asp-controller="Registration">Зарегистрироваться/</a>
+            <a asp-action="Login" asp-controller="Registration">Войти</a>
+        </div>
     </div>
 </nav>

@@ -32,7 +32,7 @@ namespace ClickME.Models
                     var claim = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name,login.Name),
-/*                        new Claim("Count",count.ToString())*/
+                        new Claim("Count",count.ToString())
                     };
 
                     var claimsIdentity = new ClaimsIdentity(claim,CookieAuthenticationDefaults.AuthenticationScheme);

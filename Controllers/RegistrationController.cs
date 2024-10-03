@@ -34,6 +34,7 @@ namespace ClickME.Controllers
                 if (principal != null) 
                 {
                     await _userAuthentication.SignInAsync(principal);
+                    return RedirectToAction("Index","Home");
                 }
                 ModelState.AddModelError(string.Empty, "Неверный логин или пароль проверьте ваши данные или пройдите регистрацию");
             }
