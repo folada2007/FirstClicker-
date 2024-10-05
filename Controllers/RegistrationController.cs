@@ -1,5 +1,8 @@
 ﻿using ClickME.Models;
 using ClickME.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClickME.Controllers
@@ -21,10 +24,21 @@ namespace ClickME.Controllers
             return View();
         }
 
+        public async Task<IActionResult> LogOut() 
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            }
+
+            return RedirectToAction("Index","Home");
+        }
+
         public IActionResult Login()
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Login(Login login)
         {

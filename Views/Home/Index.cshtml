@@ -3,6 +3,7 @@
     <a id="changeImageBtn"><img id="myImage" class="kulagin" src="~/img/Kulagin.png" alt="Alternate Text" /></a>
 </div>
 <p class="text-center">Количество кликов: <span id="clickCount">0</span></p>
+<span class="d-block text-center text-danger" id="errorMessage"><span>
 <script>
     let isLoadingImage = false;
 
@@ -19,7 +20,7 @@
             if (data.clickCount !== undefined) {
                 document.getElementById("clickCount").textContent = data.clickCount;
             } else {
-                console.error('Ошибка при обновлении кликов:', data.error);
+                document.getElementById("errorMessage").textContent = data.message;
             }
             return fetch('/Home/GetNewImage');
         })

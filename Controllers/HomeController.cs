@@ -24,7 +24,7 @@ public class HomeController : Controller
             await _context.SaveChangesAsync();
             return Json(new { clickCount = DbUser.Count });
         }
-        return Json(new { message = "ХЗ ты черт" });
+        return Json(new { message = "Для начала отсчета войдите в систему" });
     }
 
     public IActionResult Index()
